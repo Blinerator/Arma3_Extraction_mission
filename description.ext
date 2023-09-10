@@ -1,7 +1,7 @@
 respawn = 3;
-respawnDelay = 20;
+respawnDelay = 30;
 respawnTemplatesGuer[] = {"MenuPosition"};
-respawnOnStart = 0;
+respawnOnStart = -1;
 enableDebugConsole = 1;
 allowFunctionsLog = 0;
 unsafeCVL = 1;
