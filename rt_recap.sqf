@@ -21,7 +21,7 @@ _grp = group _veh;
 _grp addWaypoint[_pos,50];
 
 
-for "_i" from 0 to 6 do{
+for "_i" from 0 to 5 do{
 	x = _pos select 0;
 	y = _pos select 1;
 	x = x + random(2*_patrol_area) - _patrol_area/2;

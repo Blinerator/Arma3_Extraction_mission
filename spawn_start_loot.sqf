@@ -6,13 +6,17 @@ spawn_crate setPos [spawnPosition select 0,spawnPosition select 1,100];
 spawn_crate addItemCargoGlobal ["ACE_EntrenchingTool",2];
 spawn_crate addItemCargoGlobal ["vn_mx991_red",3];
 //spawn weapon for each dude:
-{
-	if (groupId (group player) != "Alpha 1-2") then {
-		_wpn = selectRandom _weapons;
-		spawn_crate addItemCargoGlobal [_wpn select 0,1];
-		spawn_crate addItemCargoGlobal [_wpn select 1,3];
-	};
-}forEach allPlayers;
+
+_wpn = selectRandom _weapons;
+spawn_crate addItemCargoGlobal [_wpn select 0,1];
+spawn_crate addItemCargoGlobal [_wpn select 1,3];
+_wpn = selectRandom _weapons;
+spawn_crate addItemCargoGlobal [_wpn select 0,1];
+spawn_crate addItemCargoGlobal [_wpn select 1,3];
+_wpn = selectRandom _weapons;
+spawn_crate addItemCargoGlobal [_wpn select 0,1];
+spawn_crate addItemCargoGlobal [_wpn select 1,3];
+
 
 _parachute = createVehicle ["B_Parachute_02_F", [spawnPosition select 0,spawnPosition select 1,100], [], 0, 'FLY'];
 spawn_crate attachTo [_parachute, [0,0,-1.3]];

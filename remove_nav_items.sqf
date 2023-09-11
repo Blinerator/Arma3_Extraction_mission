@@ -12,6 +12,14 @@ while {true} do{
 			_x unassignItem "vn_b_item_compass";
 			_x removeItem "vn_b_item_compass";
 		};
+		if(side _x == civilian) then{
+			_x unassignItem "vn_o_item_radio_m252";
+			_x removeItem "vn_o_item_radio_m252";
+			_x unassignItem "vn_o_item_map";
+			_x removeItem "vn_o_item_map";
+			_x unassignItem "vn_b_item_compass";
+			_x removeItem "vn_b_item_compass";
+		};
 	}forEach allUnits;
-	sleep 15;
+	sleep 10;
 };

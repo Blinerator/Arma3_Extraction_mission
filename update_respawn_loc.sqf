@@ -1,7 +1,7 @@
 while {true} do{
 	downed_respawn_loc = spawnPosition;
 	{
-		downed_respawn_loc = getPos _x;
+		downed_respawn_loc = getPos downed_0;
 	}forEach units downed_team;
 	
 	rescue_respawn_loc = [0,0,0];

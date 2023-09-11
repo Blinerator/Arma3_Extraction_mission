@@ -25,3 +25,15 @@ player addAction
     "",
    "cursorTarget isKindOf 'Land_vn_communication_f'"
 ];
+
+// player addAction
+// [
+//     "Talk",
+//     "talk_to_elder.sqf",//[getPos player] remoteExec ["radio_transmit.sqf",0], // Take the code from your flip vehicle script and put it in a file called flip.sqf
+//     null,
+//     1.5,
+//     false,
+//     true,
+//     "",
+//    "cursorTarget isKindOf 'vn_c_men_04'"
+// ];

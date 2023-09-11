@@ -98,7 +98,39 @@ villages = [
     "village_96",
     "village_97",
     "village_98",
-    "village_99"
+    "village_99",
+    "village_100",
+    "village_101",
+    "village_102",
+    "village_103",
+    "village_104",
+    "village_105",
+    "village_106",
+    "village_107",
+    "village_108",
+    "village_109",
+    "village_110",
+    "village_111",
+    "village_112",
+    "village_113",
+    "village_114",
+    "village_115",
+    "village_116",
+    "village_117",
+    "village_118",
+    "village_119",
+    "village_120",
+    "village_121",
+    "village_122",
+    "village_123",
+    "village_124",
+    "village_125",
+    "village_126",
+    "village_127",
+    "village_128",
+    "village_129",
+    "village_130",
+    "village_131"
 ];
 
 village_guard = ["vn_o_men_vc_regional_09", 
@@ -110,8 +142,24 @@ village_guard = ["vn_o_men_vc_regional_09",
 "vn_o_men_vc_local_26"
 ];
 
+_vehicles_civ = ["vn_c_car_03_01", 
+"vn_c_car_01_01", 
+"vn_c_car_04_01", 
+"vn_c_car_02_01", 
+"vn_c_wheeled_m151_02", 
+"vn_c_wheeled_m151_01", 
+"vn_c_car_01_02", 
+"vn_b_wheeled_m54_01_aus_army", 
+"vn_b_wheeled_m151_01", 
+"vn_c_bicycle_01"];
+
 village_positions_3d = [];
 
+add_elder_action = {
+    params["_e"];
+    _e = _this select 0;
+    _e addAction ["Talk", "talk_to_elder.sqf"];
+};
 
 _elder = "vn_c_men_04";
 
@@ -135,11 +183,17 @@ while {true} do{
 				//create elder:
 				_grp = createGroup civilian;
 				_e = _grp createUnit[_elder,_village,[],0,"FORM"];
-				_e addAction ["Talk", "talk_to_elder.sqf"];
+                _x_ = _village select 0;
+                _y_ = _village select 1;
+                if(round(random(2))==1) then {
+                    createVehicle[selectRandom _vehicles_civ, [_x_+5,_y_+5,0]];
+                };
+                [_e] remoteExec["add_elder_action",0,true];
+				//_e addAction ["Talk", "talk_to_elder.sqf"];
 				_grp setBehaviour "CARELESS";
 				village_positions_3d set[_index, [_village,true]];
 				//create enemies:
-                if(round(random(3))<=1)then{
+                if(round(random(4))<=2)then{
                     village_groups pushBack createGroup EAST;
                     _current_enemy_group = count(village_groups)-1;
                     _x_ = _village select 0;

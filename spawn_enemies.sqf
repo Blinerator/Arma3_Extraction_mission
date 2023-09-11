@@ -9,8 +9,10 @@ elite_patrol = ["vn_o_men_pl_01",
 "vn_o_men_pl_14", 
 "vn_o_men_pl_07", 
 "vn_o_men_pl_02", 
-"vn_o_men_pl_13", 
-"vn_o_men_pl_08"];
+"vn_o_men_pl_07", 
+"vn_o_men_pl_08",
+"vn_o_men_pl_12",
+"vn_o_men_pl_24"];
 radio_tower_defense_groups = [];
 // {
 // 	radio_tower_defense_groups pushBack createGroup EAST;
@@ -31,6 +33,12 @@ radio_tower_defense_groups = [];
 		
 
     } forEach elite_patrol;
+
+    _wpnt = _squad addWaypoint[_towerPosition,100];
+	_wpnt = _squad addWaypoint[_towerPosition,100];
+	_wpnt = _squad addWaypoint[_towerPosition,100];
+	_wpnt setWaypointType "CYCLE";
+	_squad setBehaviour "SAFE";
 } forEach _radio_towers;
 
 

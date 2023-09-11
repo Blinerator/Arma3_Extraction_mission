@@ -110,6 +110,7 @@ execVM "initial_patrol_waypoint.sqf";
 execVM "spawn_ammo_caches.sqf";
 execVM "init_villages.sqf";
 execVM "remove_nav_items.sqf";
+execVM "periodic_ambush.sqf";
 //This array is for making sure no duplicate elder events occure:
 already_occured_elder_event_rescue = [];
 already_occured_elder_event_downed = [];
